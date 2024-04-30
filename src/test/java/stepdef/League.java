@@ -3,51 +3,58 @@ package stepdef;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import pages.LeaguePage;
+import utils.AppiumDriverSetUp;
+import utils.LoggerUtil;
 
 public class League {
-    @Then("verify user is on home page")
-    public void verifyUserIsOnHomePage() {
-        Assert.assertTrue(true);
+
+    LeaguePage leaguePage = new LeaguePage(AppiumDriverSetUp.getDriver());
+    @And("User clicks on League")
+    public void userClicksOnLeague() {
+        LoggerUtil.info("click on League Button");
+        leaguePage.clickOnLeagueButton();
     }
 
-    @And("User clicks Leagues from bottom navigation")
-    public void userClicksLeaguesFromBottomNavigation() {
-        Assert.assertTrue(true);
-    }
-
-    @And("User clicks on {string}")
-    public void userClicksOn(String arg0) {
-        Assert.assertTrue(true);
-    }
-
-    @Then("User verify user is on {string} page")
-    public void userVerifyUserIsOnPage(String arg0) {
-        Assert.assertTrue(true);
-    }
-
-    @And("user click on Standings of the game")
-    public void userClickOnStandingsOfTheGame() {
-        Assert.assertTrue(true);
-    }
-
-    @Then("Verify user is on Standing sub-tab")
-    public void verifyUserIsOnStandingSubTab() {
-        Assert.assertTrue(true);
-    }
-
-    @And("user click on back Button")
-    public void userClickOnBackButton() {
-        Assert.assertTrue(true);
-    }
-
-    @Then("verify user is on League Page")
+    @Then("Verify User is on League Page")
     public void verifyUserIsOnLeaguePage() {
-        Assert.assertTrue(true);
+
+        LoggerUtil.info("Verifying League page");
+        leaguePage.isOnLeaguePage();
     }
 
-    @Then("verify user is on the League page")
-    public void verifyUserIsOnTheLeaguePage() {
-        Assert.assertTrue(true);
-
+    @And("User clicks on MLB")
+    public void userClicksOnNHL() {
+        LoggerUtil.info("click on MLB");
+        leaguePage.clickNBLButton();
     }
+
+
+    @Then("User verifies User is on MLB Page")
+    public void userVerifiesUserIsOnNHLPage() {
+
+        LoggerUtil.info("Verifying MLB header");
+        leaguePage.isOnNHLPage();
+    }
+
+    @And("User clicks on Standing on MLB Page")
+    public void userClicksOnOnNHLPage() {
+
+        LoggerUtil.info("click on standings");
+        leaguePage.clickStandingButton();
+    }
+
+    @Then("Verify user is on Standing Page")
+    public void verifyUserIsOnStandingPage() {
+        LoggerUtil.info("verifying standing button");
+        leaguePage.isOnStandingPage();
+    }
+
+    @And("User clicks on Back Button")
+    public void userClicksOnBackButton() {
+
+        LoggerUtil.info("click on back button");
+        leaguePage.clickBackButton();
+    }
+
 }

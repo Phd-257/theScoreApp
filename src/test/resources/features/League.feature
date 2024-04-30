@@ -5,14 +5,15 @@ Feature: Validate sub-tab of the League
     And User click on Login from Welcome Page
     Then Verify user is Login Page
     And When User enters email "<Email>" and password "<Password>"
-#    And User clicks Leagues from bottom navigation
-#    Then verify user is on the League page
-#    And User clicks on "<Game>"
-#    Then User verify user is on "<Game>" page
-#    And user click on Standings of the game
-#    Then Verify user is on Standing sub-tab
-#    And user click on back Button
-#    Then verify user is on League Page
+    Then verify user is on home page
+    And User clicks on League
+    Then Verify User is on League Page
+    And User clicks on MLB
+    Then User verifies User is on MLB Page
+    And User clicks on Standing on MLB Page
+    Then Verify user is on Standing Page
+    And User clicks on Back Button
+    Then Verify User is on League Page
 
     @test1
     Examples:

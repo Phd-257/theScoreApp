@@ -9,7 +9,7 @@ import stepdef.*;
         features = "src/test/resources/features", // Path to your feature files
         glue = {"classpath:stepdef"}, // Package where your step definitions are located
         tags = "@test1", // Tags to filter scenarios
-        plugin = {"pretty", "html:target/cucumber-reports"} // Plugins to generate test reports
+        plugin = {"html:target/cucumber-html-report.html"} // Plugins to generate test reports
 )
 public class RunApiTest {
 }

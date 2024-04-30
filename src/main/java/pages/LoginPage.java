@@ -24,21 +24,18 @@ public class LoginPage {
     // Method to enter email
     public void enterEmail(String email) {
         WebElement emailInput = driver.findElement(By.xpath("//android.widget.EditText[@resource-id='com.fivemobile.thescore:id/email_input_edittext']"));
-        LoggerUtil.info("Entering Email");
         emailInput.sendKeys(email);
     }
 
     // Method to enter password
     public void enterPassword(String password) {
         WebElement passwordInput = driver.findElement(By.xpath("//android.widget.EditText[@resource-id='com.fivemobile.thescore:id/password_input_edittext']"));
-        LoggerUtil.info("Entering Password");
         passwordInput.sendKeys(password);
     }
 
     // Method to click on the login button
     public void clickLoginButton() {
         WebElement loginButton = driver.findElement(By.xpath("//android.view.ViewGroup[@resource-id='com.fivemobile.thescore:id/login_button']"));
-        LoggerUtil.info("Clicking Log In");
         loginButton.click();
     }
 }
