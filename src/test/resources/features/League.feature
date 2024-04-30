@@ -1,8 +1,10 @@
 Feature: Validate sub-tab of the League
 
   Scenario Outline: Validate sub-tab of the League
-    Given User logs in with the "<Credentials>"
-#    Then verify user is on home page
+    Given User is on Welcome Page
+    And User click on Login from Welcome Page
+    Then Verify user is Login Page
+    And When User enters email "<Email>" and password "<Password>"
 #    And User clicks Leagues from bottom navigation
 #    Then verify user is on the League page
 #    And User clicks on "<Game>"
@@ -14,5 +16,5 @@ Feature: Validate sub-tab of the League
 
     @test1
     Examples:
-      | Credentials |
-      | harsh       |
+      | Email | Password |
+      | patel_harsh@myyahoo.com| Harsh@257|
