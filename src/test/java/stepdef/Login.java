@@ -7,7 +7,6 @@ import io.cucumber.java.en.Then;
 import org.json.simple.JSONObject;
 import pages.LoginPage;
 import pages.WelcomePage;
-import utils.AppiumDriverSetUp;
 import utils.JasonReader;
 import utils.LoggerUtil;
 
@@ -15,7 +14,7 @@ import java.util.Objects;
 
 public class Login {
 
-    AppiumDriver driver = AppiumDriverSetUp.createAndroidDriver();
+    AppiumDriver driver = Hooks.getDriver();
 
     WelcomePage welcomePage;
     LoginPage loginPage;

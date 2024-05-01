@@ -2,14 +2,12 @@ package stepdef;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import org.junit.Assert;
 import pages.LeaguePage;
-import utils.AppiumDriverSetUp;
 import utils.LoggerUtil;
 
 public class League {
 
-    LeaguePage leaguePage = new LeaguePage(AppiumDriverSetUp.getDriver());
+    LeaguePage leaguePage = new LeaguePage(Hooks.getDriver());
     @And("User clicks on League")
     public void userClicksOnLeague() {
         LoggerUtil.info("click on League Button");

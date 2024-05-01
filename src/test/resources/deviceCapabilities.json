@@ -1,0 +1,16 @@
+{
+  "android": {
+    "platformName": "android",
+    "platformVersion": "14",
+    "deviceName": "Android-14",
+    "automationName": "UiAutomator2",
+    "app": "/Users/phd_257/Downloads/theScore.apk"
+  },
+  "ios": {
+    "platformName": "iOS",
+    "deviceName": "iPhone Simulator",
+    "app": "/Users/phd_257/Downloads/theScore.apk",
+    "automationName": "XCUITest",
+    "platformVersion": "14.0"
+  }
+}
