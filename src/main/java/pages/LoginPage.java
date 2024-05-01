@@ -4,7 +4,6 @@ import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import utils.LoggerUtil;
 
 public class LoginPage {
 
@@ -21,16 +20,13 @@ public class LoginPage {
         Assert.assertTrue(titleElement.getText().equalsIgnoreCase("Log In"));
     }
 
-    // Method to enter email
-    public void enterEmail(String email) {
+    public void enterCredential(String email, String pass){
+
         WebElement emailInput = driver.findElement(By.xpath("//android.widget.EditText[@resource-id='com.fivemobile.thescore:id/email_input_edittext']"));
         emailInput.sendKeys(email);
-    }
-
-    // Method to enter password
-    public void enterPassword(String password) {
         WebElement passwordInput = driver.findElement(By.xpath("//android.widget.EditText[@resource-id='com.fivemobile.thescore:id/password_input_edittext']"));
-        passwordInput.sendKeys(password);
+        passwordInput.sendKeys(pass);
+
     }
 
     // Method to click on the login button

@@ -1,0 +1,10 @@
+{
+  "normalUser": {
+    "email": "patel_harsh@myyahoo.com",
+    "password": "Harsh@257"
+  },
+  "paidUser": {
+    "email": "ex@ex.com",
+    "password": "abcde123"
+  }
+}

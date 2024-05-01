@@ -4,7 +4,7 @@ Feature: Validate sub-tab of the League
     Given User is on Welcome Page
     And User click on Login from Welcome Page
     Then Verify user is Login Page
-    And When User enters email "<Email>" and password "<Password>"
+    And When user Enters "<credential>"
     Then verify user is on home page
     And User clicks on League
     Then Verify User is on League Page
@@ -17,5 +17,5 @@ Feature: Validate sub-tab of the League
 
     @test1
     Examples:
-      | Email | Password |
-      | patel_harsh@myyahoo.com| Harsh@257|
+      | credential |
+      | normalUser |

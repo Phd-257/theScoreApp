@@ -4,13 +4,14 @@ import io.appium.java_client.AppiumDriver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import pages.HomePage;
+import org.json.simple.JSONObject;
 import pages.LoginPage;
 import pages.WelcomePage;
 import utils.AppiumDriverSetUp;
+import utils.JasonReader;
 import utils.LoggerUtil;
 
-import java.util.concurrent.TimeUnit;
+import java.util.Objects;
 
 public class Login {
 
@@ -23,7 +24,6 @@ public class Login {
     @Given("User is on Welcome Page")
     public void userIsOnWelcomePage() {
         LoggerUtil.info("User is on welcome Page");
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         welcomePage = new WelcomePage(driver);
         welcomePage.isWelcomeTextDisplayed();
     }
@@ -42,15 +42,17 @@ public class Login {
 
     }
 
-    @And("When User enters email {string} and password {string}")
-    public void whenUserEntersEmailAndPassword(String email, String password) {
-        loginPage = new LoginPage(driver);
-        LoggerUtil.info("Entering Email..");
-        loginPage.enterEmail(email);
-        LoggerUtil.info("Entering Password ....");
-        loginPage.enterPassword(password);
+    @And("When user Enters {string}")
+    public void whenUserEnters(String credential) {
+
+        JSONObject testData = JasonReader.getTestData(credential);
+        String email = (String) Objects.requireNonNull(testData).get("email");
+        String password = (String) testData.get("password");
+        LoggerUtil.info("Entering Email and pass..");
+        loginPage.enterCredential(email,password);
         LoggerUtil.info("Click on Login Button");
         loginPage.clickLoginButton();
+
     }
 
 }
